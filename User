@@ -1,0 +1,159 @@
+import java.sql.Date;
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.io.*;
+
+public class User {
+	
+	
+	public String userName;
+	private String passWord;
+	public String type;
+    public String memberCost;
+    public int rentAmount;
+    
+    // defaul contructor
+    
+	User(String name, String pass, String t, String c, int a) {
+		
+    	userName = name;
+    	passWord =pass;
+    	type = t;
+    	memberCost =c;
+    	rentAmount = a;
+	}
+	public User() {
+		
+	}
+	//accessors
+	
+	public String getUsername(){
+		return userName;
+	}
+	public String getPass(){
+		return passWord;
+	}
+	public String getType(){
+		return type;
+	}
+	public String getMemberCost(){
+		return memberCost;
+	}
+	public int getRentAmount(){
+		return rentAmount;
+	}
+	// mutator
+	
+	public void setUsername(){
+		this.userName = userName;
+	}
+	public void setPass(){
+		this.passWord = passWord;
+	}
+	public void setType(){
+		this.type = type;
+	}
+	public void setMemberCost(){
+		this.memberCost = memberCost;
+	}
+	public void setAmount(){
+		this.rentAmount = rentAmount;
+	}
+	// toString method
+	public String toString(){
+		return "Name: " + userName + passWord + type + memberCost +rentAmount;
+		
+	}
+	// Register
+	// create object array of super class User
+	public void Register(){
+		ArrayList<User> userList = new ArrayList<User>();
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("------ Register Account -------");
+		System.out.println("Username : ");
+		String username = input.nextLine();
+		System.out.println("Password : ");
+		String passWord = input.nextLine();
+		System.out.println("Member type(Gold, standard,Free) : ");
+		String type = input.nextLine();
+			if (type.equals("Gold"))
+			{	memberCost = "9.99";
+				rentAmount = 4;
+			}
+			if (type.equals("Standard")){
+				rentAmount = 4;
+				memberCost = "6.99";
+			}
+			if (type.equals("Free"))
+			{
+				memberCost = "0.00";
+				rentAmount =0;
+			}
+		
+		User user = new User (  username,  passWord,  type,  memberCost, rentAmount);
+		userList.add(user);
+				
+		
+	}
+	
+	// Log in
+	public void login(){
+		//Scanner scanner = new Scanner (File toScan)
+		Scanner scan = new Scanner (new File("Account.txt"));
+		Scanner keyboard = new Scanner (System.in);
+		
+		//  check file 
+		String user = scan.nextLine();
+		String pass = scan.nextLine();
+		
+		//get input from user
+		String inputUserName = keyboard.nextLine();
+		String inputPassWord = keyboard.nextLine();
+		
+		// verify user input
+		if(inputUserName.equals(user)&& inputPassWord.equals(pass)){
+			System.out.println("Successful Login!");
+		}
+		else {
+			System.out.println("Invalid Credentials");
+		}
+	}
+
+	
+	//
+	//----------------------------------------------
+	// Checks to see if balance is sufficient for quantity.
+	// If so, decrements balance by  rent quatity; if not, prints message.
+	
+	//----------------------------------------------
+	public String withdraw(int rentAmount)
+	{
+	if (balance  >= rentAmount)
+	{
+	     balance -= rentAmount;
+	     Integer.toString  (balance);
+	  }
+	else
+	System.out.println("Insufficient amount ");
+	} 
+	
+	
+	
+	// display info general
+	public  void displayUserID(){
+		System.out.println(userName);
+		System.out.println(type);
+		
+	}
+	// display info information to Admin
+	public  void displayUser(){
+		System.out.println(userName);
+		System.out.println(accountNum);
+		System.out.println(type);
+		System.out.println(passWord);
+		System.out.println(rentAmount);
+		System.out.println(memberCost);
+	}
+	
+}
