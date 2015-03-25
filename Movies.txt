@@ -1,0 +1,17 @@
+16
+The Avengers#Action#16.55#false#0
+Taken#Action#14.52#true#2
+Pirates of the Caribbean: The Curse of the Black Pearl#Adventure#10.23#false#0
+The Princess Bride#Adventure#9.69#true#4
+White Chicks#Comedy#15.36#false#0
+The Hangover#Comedy#16.46#true#3
+Into the Woods#Fantasy#21.99#false#0
+Maleficent#Fantasy#19.36#true#5
+Schindler's List#History#10.99#false#0
+Lincoln#History#25.99#true#4
+Paranormal Activity#Horror#15.66#false#0
+28 Days Later#Horror#16.33#true#6
+Titanic#Romance#14.55#false#0
+50 First Dates#Romance#10.22#true#2
+The Matrix#Sci-fi#9.66#false#0
+The Terminator#Sci-fi#8.44#true#3
